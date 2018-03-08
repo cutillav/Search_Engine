@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+      <h1>CrimeMap</h1>
+      <p>A map of recent criminal activity in the Grahamstown area.</p>
+	<table>
+
+	{% for index in range(data|length) %}
+		<tr>
+		{% for key in data[index] %}
+			<td>{{ data[index][key] }}</td>
+		{% endfor %}
+		</tr>
+	{% endfor %}
+		
+</body>
+</html>
