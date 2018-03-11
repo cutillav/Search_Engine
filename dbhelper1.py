@@ -15,7 +15,7 @@ class DBHelper:
     def get_data(self):
         connection = self.connect()
         try:
-            query = "SELECT country,year,flow,trade FROM data;"
+            query = "SELECT country,year,flow,trade FROM data where country='Spain';"
             with connection.cursor() as cursor:
                 cursor.execute(query)
             data = []
@@ -27,6 +27,7 @@ class DBHelper:
                     'trade': row[3].decode('utf8')
                 }
                 data.append(datapiece)
-            return data
+            data_dict= {"data":data}
+            return data_dict
         finally:
-	    connection.close()
+            connection.close()
