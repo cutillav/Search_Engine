@@ -8,7 +8,7 @@ class DBHelper:
         print "Getting connection"
         return pymysql.connect(host='localhost',
                                user="root",
-                               passwd="root",
+                               passwd="Admin2000",
                                db=database)
        
 
